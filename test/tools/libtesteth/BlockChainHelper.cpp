@@ -541,8 +541,8 @@ vector<TestBlock> TestBlockChain::syncUncles(vector<TestBlock> const& uncles)
 TestTransaction TestTransaction::defaultTransaction(u256 const& _nonce, u256 const& _gasPrice, u256 const& _gasLimit, bytes const& _data)
 {
 	json_spirit::mObject txObj;
-	txObj["data"] = toHex(_data);
-	txObj["gasLimit"] = toString(_gasLimit);
+    txObj["data"] = toHexPrefixed(_data);
+    txObj["gasLimit"] = toString(_gasLimit);
 	txObj["gasPrice"] = toString(_gasPrice);
 	txObj["nonce"] = toString(_nonce);
 	txObj["secretKey"] = "0x45a915e4d060149eb4365960e6a7a45f334393093061116b197e3240065ff2d8";
